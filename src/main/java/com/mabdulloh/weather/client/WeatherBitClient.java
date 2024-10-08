@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class WeatherBitClient implements WeatherClient<CurrentWeatherBitClientResponse> {
 
-    private final static String API_KEY = "c1eba6ff6e1d4987a4f8dcbe03d10018";
+    private final static String API_KEY = "";
     private final static String BASE_URL = "https://api.weatherbit.io/v2.0";
     private final static RestTemplate REST_TEMPLATE = new RestTemplate();
     private final static ObjectMapper OBJECT_MAPPER = new ObjectMapper();

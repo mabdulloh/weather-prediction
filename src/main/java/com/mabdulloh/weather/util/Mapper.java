@@ -17,10 +17,6 @@ public class Mapper {
         return MAPPER.convertValue(json, clazz);
     }
 
-    public static <T> T fromJson(JsonNode jsonNode, Class<T> clazz) {
-        return MAPPER.convertValue(jsonNode, clazz);
-    }
-
     public static String toJson(Object obj) {
         try {
             return MAPPER.writeValueAsString(obj);

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mabdulloh.weather.domain.apininja.CurrentWeatherApiNinjaClientResponse;
 import com.mabdulloh.weather.domain.response.CurrentWeatherResponse;
 import com.mabdulloh.weather.domain.weatherbit.CurrentWeatherBitClientResponse;
 import com.mabdulloh.weather.exception.WeatherException;
@@ -41,5 +42,14 @@ public class Mapper {
                 .setWindDirection(source.getWinDirectionFull())
                 .setWindSpeed(source.getWindSpeed())
                 .setWeather(source.getWeather().getDescription());
+    }
+
+    public static CurrentWeatherResponse map(CurrentWeatherApiNinjaClientResponse source) {
+        return new CurrentWeatherResponse()
+                .setCityName(source.getCityName())
+                .setCountryCode(source.getCountryCode())
+                .setTemperature(source.getTemperature())
+                .setWindSpeed(source.getWindSpeed())
+                .setWindDirection(source.getWindDegrees().toString());
     }
 }

@@ -15,7 +15,11 @@ public class Mapper {
     private final static ObjectMapper MAPPER = new ObjectMapper();
 
     public static <T> T fromJson(String json, Class<T> clazz) {
-        return MAPPER.convertValue(json, clazz);
+        try {
+            return MAPPER.readValue(json, clazz);
+        } catch (JsonProcessingException e) {
+            throw new WeatherException(e);
+        }
     }
 
     public static String toJson(Object obj) {

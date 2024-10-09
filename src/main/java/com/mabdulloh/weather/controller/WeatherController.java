@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class WeatherController {
 
-    private final WeatherService weatherService;
+    private final WeatherService apiNinjaWeatherService;
 
     @GetMapping(value = "/current")
     public CurrentWeatherResponse getCurrentWeather(@RequestParam String cityName,
                                                      @RequestParam String countryCode) {
-        return weatherService.getCurrentWeatherResponse(cityName, countryCode);
+        return apiNinjaWeatherService.getCurrentWeatherResponse(cityName, countryCode);
     }
 }

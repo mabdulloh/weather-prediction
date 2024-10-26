@@ -16,7 +16,7 @@ public class ApiNinjaClient implements WeatherClient<CurrentWeatherApiNinjaClien
 
     private final static String BASE_URL = "https://api.api-ninjas.com/v1";
     private final static RestTemplate REST_TEMPLATE = new RestTemplate();
-    private final static String API_KEY = "kMq0/rdxgQj/u51CTqYX5A==PPLJ7uOXVPkLcPw1";
+    private final static String API_KEY = "";
 
     @Override
     public CurrentWeatherApiNinjaClientResponse getCurrentWeather(String cityName, String countryCode) {
